@@ -1,0 +1,76 @@
+import UIKit
+
+var greeting = "Hello, playground"
+
+/*Создайте три опциональные строковые переменные. Первые две проинициализируйте значениями, оставшуюся переменную проинициализируйте значением nil. При помощи nil-coalescing оператора выведите каждое значение в консоль с новой строки. Затем присвойте 3-й переменной значение и выведите его в консоль, используя nil-coalescing оператор. Есть ли разница между выводами в случае, когда переменная не имела значения и после присвоения.*/
+
+var textOne: String? = "sometext"
+var textTwo: String? = "sometextwo"
+var textThree: String? = nil
+var unwrappedTextThree = textThree ?? "Here we go"
+print("Oh, \(textThree ?? "Here we go")!")
+print(textTwo ?? "sometext" )
+print(textOne ?? "sometextwo")
+
+
+/*Создать пять строковых констант. Одни константы это только цифры, другие содержат еще и буквы. Найти сумму всех этих констант приведя их к Int. (Используйте optional binding и forced unwrapping)*/
+
+let catOne = "5"
+let catOneInt = Int(catOne)
+let catTwo: String? = "3abcd"
+let catThree: String? = "00abcd"
+let catFour = "5859403"
+let catFourInt = Int(catFour)
+let catFive: String? = "78aa"
+
+if let catTwoInt = catTwo {
+    print(catTwoInt)
+}
+
+if let catThreeInt = catThree {
+    print(catThreeInt)
+
+}
+if let catFiveInt = catFive {
+    print(catFiveInt)
+}
+
+
+var result = catOne + catTwo! + catThree! + catFour + catFive!
+print (result)
+
+    /*Задача №2
+
+Optional<Int>.
+
+Создайте опциональную константу с типом данных Optional<Int>. Проинициализируйте конструктором преобразования строки в целое число Int(String). Вместо String впишите температуру за окном. При помощи конструкции if else выведите в консоль информационные сообщения, например для таких случаев, температура:
+Больше нуля;
+Меньше нуля;
+Меньше -10 градусов;
+Больше 10 градусов;
+Нет значения (nil)
+Например, если температура -25 градусов,
+
+print (“Это что, Сибирь?”)
+
+Попробуйте подставить различные значения в конструктор, чтобы увидеть в консоли все сообщения. */
+
+var weatherInSiberia : Int? = Int("12")
+print (weatherInSiberia!)
+let weatherInSiberiaTwo: String? = nil
+
+if weatherInSiberia! > 0 {
+print ("temperature is above zero")
+}
+if weatherInSiberia! < 0 {
+print ("temperature is below zero")
+}
+if weatherInSiberia! < -10 {
+print ("temperature is below -10 ")
+}
+if weatherInSiberia! > 10 {
+print ("temperature is above +10")
+}
+if (weatherInSiberiaTwo == nil) {
+print ("temperature is nil")
+}
