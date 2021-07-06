@@ -1,0 +1,31 @@
+import UIKit
+
+
+var zooArr = [String]()
+
+func animals (animalOne:String, animalTwo:String, animalThree:String) {
+    zooArr.append (contentsOf:[animalOne,animalTwo,animalThree])
+}
+func animalsDead (animalOne:String, animalTwo:String,animalThree:String){
+    zooArr.remove(at:0)
+}
+animals (animalOne: "Mouse", animalTwo: "Elephant", animalThree: "Dog")
+print(zooArr)
+
+animalsDead (animalOne: "Mouse", animalTwo: "Elephant", animalThree: "Dog")
+print(zooArr)
+
+
+
+/*Задача 2*/
+
+var testTaskDictionary: [String: String] = [:]
+print (testTaskDictionary)
+
+func testTask(clientBonuses: Dictionary <Int, Double>) -> [Int: Int] {
+
+    let clientId: Int = clientBonuses[12]
+    let moneyUnits: Int = clientBonuses[13]
+    return (clientId, moneyUnits)
+}
+
